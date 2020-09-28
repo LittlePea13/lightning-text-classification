@@ -85,7 +85,7 @@ def main(hparams) -> None:
     # 6 START TRAINING
     # ------------------------
     trainer.fit(model, model.data)
-
+    trainer.test(model)
 
 if __name__ == "__main__":
     # ------------------------
@@ -131,7 +131,7 @@ if __name__ == "__main__":
     )
     parser.add_argument(
         "--max_epochs",
-        default=20,
+        default=3,
         type=int,
         help="Limits training to a max number number of epochs",
     )
