@@ -12,7 +12,6 @@ from torch.utils.data import DataLoader, RandomSampler
 from transformers import AutoModel
 from torch.nn.functional import kl_div, softmax, log_softmax
 import pytorch_lightning as pl
-from tokenizer import Tokenizer
 from torchnlp.encoders import LabelEncoder
 from torchnlp.utils import collate_tensors, lengths_to_mask
 from utils import mask_fill
@@ -103,7 +102,7 @@ class Classifier(pl.LightningModule):
             hparams = argparse.Namespace(**hparams)
         self.hparams = hparams
         self.batch_size = hparams.batch_size
-
+        print(hparams)
         # Build Data module
         self.data = self.DataModule(self)
         

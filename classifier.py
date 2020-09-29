@@ -12,7 +12,6 @@ from torch.utils.data import DataLoader, RandomSampler
 from transformers import AutoModel
 
 import pytorch_lightning as pl
-from tokenizer import Tokenizer
 from torchnlp.encoders import LabelEncoder
 from torchnlp.utils import collate_tensors, lengths_to_mask
 from utils import mask_fill
